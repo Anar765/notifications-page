@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/static/PlusJakartaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/static/PlusJakartaSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+html {
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  color: hsl(219, 12%, 42%);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: hsl(0, 100%, 100%);
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+main > *, .chats .chat {
+  width: 100%;
+}
+
+.header, .notif {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.header {
+  justify-content: space-between;
+}
+
+.notif .number {
+  border: none;
+  cursor: pointer;
+  background: hsl(0, 100%, 100%);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  background: hsl(219, 85%, 26%);
+  color: hsl(0, 100%, 100%);
+  width: 2.2rem;
+  height: 1.8rem;
+}
+
+.notif h2 {
+  color: hsl(224, 21%, 14%);
+  font-weight: 800;
+}
+
+.header button {
+  border: none;
+  cursor: pointer;
+  background: hsl(0, 100%, 100%);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: hsl(219, 12%, 42%);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.chats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chats .chat {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.chats .chat.active {
+  background: hsl(210, 60%, 98%);
+}
+
+.chats img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.chat span.fullname {
+  color: hsl(224, 21%, 14%);
+  font-weight: 800;
+}
+
+.chat span.club {
+  color: hsl(219, 85%, 26%);
+  font-weight: 800;
+}
+
+.chat span.event {
+  color: hsl(219, 12%, 42%);
+  font-weight: 800;
+}
+
+.chat span.dot {
+  border-radius: 50%;
+  background: hsl(1, 90%, 64%);
+  width: 0.5rem;
+  height: 0.5rem;
+  display: inline-block;
+  margin-inline: 0.4rem;
+  position: relative;
+}
+
+.chat span.dot::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: hsl(1, 90%, 64%);
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.3;
+  top: -50%;
+  left: -50%;
+  border-radius: 50%;
+  animation: pulse 1s ease-out infinite;
+}
+
+.chat .message {
+  border: 1px solid hsl(219, 12%, 42%);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */

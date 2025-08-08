@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./sass/style.css">
+
+  <title>Frontend Mentor | Notifications page</title>
+</head>
+
+<body>
+
+  <main>
+    <div class="header">
+      <div class="notif">
+        <h2>Notifications</h2>
+        <button class="number">
+          3
+        </button>
+      </div>
+
+      <button onclick="Mark()">Mark all as read</button>
+    </div>
+
+    <div class="chats">
+
+      <div class="chat active">
+        <img src="./assets/images/avatar-mark-webber.webp" alt="Mark Webber">
+        <div class="text">
+          <p>
+            <span class="fullname">Mark Webber</span> reacted to your recent post
+            <span class="event">My first tournament today!</span>
+            <span class="dot"></span>
+          </p>
+          <h6>1m ago</h6>
+        </div>
+      </div>
+
+      <div class="chat active">
+        <img src="./assets/images/avatar-angela-gray.webp" alt="Angela Gray">
+        <div class="text">
+          <p><span class="fullname">Angela Gray</span> followed you<span class="dot"></span></p>
+          <h6>5m ago</h6>
+        </div>
+      </div>
+
+      <div class="chat active">
+        <img src="./assets/images/avatar-jacob-thompson.webp" alt="Jacob Thompson">
+        <div class="text">
+          <p><span class="fullname">Jacob Thompson</span> has joined your group <span class="club">Chess Club</span>
+            <span class="dot"></span></p>
+          <h6>1 day ago</h6>
+        </div>
+      </div>
+
+      <div class="chat private">
+        <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="Rizky Hasanuddin">
+        <div class="text">
+          <p><span class="fullname">Rizky Hasanuddin</span> sent you a private message </p>
+          <h6>5 days ago</h6>
+          <div class="message">
+            <p>Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already
+              having lots of fun and improving my game.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat">
+        <img src="./assets/images/avatar-kimberly-smith.webp" alt="Kimberly Smith">
+        <div class="text">
+          <p><span class="fullname">Kimberly Smith</span> commented on your picture</p>
+          <h6>1 week ago</h6>
+        </div>
+        <img src="./assets/images/image-chess.webp" alt="Chess">
+      </div>
+
+      <div class="chat">
+        <img src="./assets/images/avatar-nathan-peterson.webp" alt="Nathan Peterson">
+        <div class="text">
+          <p><span class="fullname">Nathan Peterson</span> reacted to your recent post <span class="event">5 end-game
+              strategies to increase your win rate</span></p>
+          <h6>2 weeks ago</h6>
+        </div>
+      </div>
+
+      <div class="chat">
+        <img src="./assets/images/avatar-anna-kim.webp" alt="Anna Kims">
+        <div class="text">
+          <p><span class="fullname">Anna Kims</span> left the group <span class="club">Chess Club</span></p>
+          <h6>2 weeks ago</h6>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
