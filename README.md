@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: (https://www.frontendmentor.io/solutions/notifications-page-solution-with-sass-Gpjsnt4M_M)
 - Live Site URL: (https://anar765.github.io/notifications-page/)
 
 ## My process
