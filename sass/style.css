@@ -52,21 +52,23 @@ main {
   max-width: 30rem;
 }
 
-main > *, .chats .chat {
+main > *,
+.chats .chat {
   width: 100%;
 }
 
-.header, .notif {
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  justify-content: space-between;
+}
+.header .notif {
   display: flex;
   align-items: center;
   gap: 0.7rem;
 }
-
-.header {
-  justify-content: space-between;
-}
-
-.notif .number {
+.header .notif .number {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,12 +80,10 @@ main > *, .chats .chat {
   width: 2.2rem;
   height: 1.8rem;
 }
-
-.notif h2 {
+.header .notif h2 {
   color: hsl(224, 21%, 14%);
   font-weight: 800;
 }
-
 .header button {
   border: none;
   cursor: pointer;
@@ -93,7 +93,6 @@ main > *, .chats .chat {
   font-size: 0.9rem;
   font-weight: 600;
 }
-
 .header button:hover {
   color: hsl(219, 85%, 26%);
 }
@@ -104,7 +103,6 @@ main > *, .chats .chat {
   align-items: center;
   gap: 0.5rem;
 }
-
 .chats .chat {
   display: flex;
   gap: 1rem;
@@ -112,51 +110,36 @@ main > *, .chats .chat {
   border-radius: 0.5rem;
   font-size: 0.9rem;
 }
-
 .chats .chat.active {
   background: hsl(210, 60%, 98%);
   cursor: pointer;
 }
-
 .chats img {
   width: 2rem;
   height: 2rem;
 }
-
 .chats img[alt=Chess] {
   border-radius: 0.4rem;
   margin-left: auto;
   cursor: pointer;
 }
-
 .chats img[alt=Chess]:hover {
   box-shadow: 0px 0px 5px 3px hsl(205, 33%, 90%);
 }
-
-.chat span {
+.chats span {
   cursor: pointer;
+  font-weight: 800;
 }
-
-.chat span.fullname {
+.chats span.fullname {
   color: hsl(224, 21%, 14%);
-  font-weight: 800;
 }
-
-.chat span.fullname:hover, .chat span.event:hover {
+.chats span.fullname:hover, .chats span.event:hover, .chats span.club {
   color: hsl(219, 85%, 26%);
 }
-
-.chat span.club {
-  color: hsl(219, 85%, 26%);
-  font-weight: 800;
-}
-
-.chat span.event {
+.chats span.event {
   color: hsl(219, 12%, 42%);
-  font-weight: 800;
 }
-
-.chat span.dot {
+.chats span.dot {
   border-radius: 50%;
   background: hsl(1, 90%, 64%);
   width: 0.5rem;
@@ -165,8 +148,7 @@ main > *, .chats .chat {
   margin-inline: 0.4rem;
   position: relative;
 }
-
-.chat span.dot::before {
+.chats span.dot::before {
   content: "";
   display: block;
   position: absolute;
@@ -179,16 +161,14 @@ main > *, .chats .chat {
   border-radius: 50%;
   animation: pulse 1s ease-out infinite;
 }
-
-.chat .message {
+.chats .message {
   border: 1px solid hsl(205, 33%, 90%);
   border-radius: 0.3rem;
   padding: 1rem;
   margin-top: 1rem;
   cursor: pointer;
 }
-
-.chat .message:hover {
+.chats .message:hover {
   background: hsl(205, 33%, 90%);
 }
 
@@ -208,7 +188,8 @@ main > *, .chats .chat {
     border-radius: 1rem;
     box-shadow: 0px 0px 10px 20px hsl(205, 33%, 90%);
   }
-  .header button, .chats .chat {
+  .header button,
+  .chats .chat {
     font-size: 1.2rem;
   }
   .chats img {

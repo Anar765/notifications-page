@@ -1,29 +1,32 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 // ===== Font Face =====
 @font-face {
-    font-family: "Plus Jakarta Sans";
-    src: url('../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/PlusJakartaSans-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Plus Jakarta Sans";
-    src: url('../assets/fonts/static/PlusJakartaSans-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/static/PlusJakartaSans-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Plus Jakarta Sans";
-    src: url('../assets/fonts/static/PlusJakartaSans-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
+  font-family: "Plus Jakarta Sans";
+  src: url("../assets/fonts/static/PlusJakartaSans-ExtraBold.ttf")
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
 }
 
 // ===== Primary Colors =====
@@ -45,205 +48,208 @@ $font-family: "Plus Jakarta Sans", sans-serif;
 
 // ===== Functions =====
 @mixin flex-align-center {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 @mixin flex-column-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @mixin button-default {
-    border: none;
-    cursor: pointer;
-    background: $White;
-    font-family: $font-family;
+  border: none;
+  cursor: pointer;
+  background: $White;
+  font-family: $font-family;
 }
 
 // ====== Styles ======
 html {
-    font-size: $font-size-default;
-    font-family: $font-family;
-    font-weight: 500;
+  font-size: $font-size-default;
+  font-family: $font-family;
+  font-weight: 500;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    min-height: fit-content;
-    color: $Gray-600;
-    background: $Blue-100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: fit-content;
+  color: $Gray-600;
+  background: $Blue-100;
 }
 
 main {
-    @include flex-column-center();
-    width: 100%;
-    height: fit-content;
-    background: $White;
-    padding: 2rem 1rem;
-    gap: 1.5rem;
-    max-width: 30rem;
+  @include flex-column-center();
+  width: 100%;
+  height: fit-content;
+  background: $White;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+  max-width: 30rem;
 }
 
-main > *, .chats .chat { width: 100% }
+main > *,
+.chats .chat {
+  width: 100%;
+}
 
-.header, .notif {
+.header {
+  @include flex-align-center();
+  gap: 0.7rem;
+  justify-content: space-between;
+
+  .notif {
     @include flex-align-center();
     gap: 0.7rem;
-}
 
-.header { justify-content: space-between }
+    .number {
+      @include flex-align-center();
+      justify-content: center;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      background: $Blue-950;
+      color: $White;
+      width: 2.2rem;
+      height: 1.8rem;
+    }
 
-.notif .number {
-    @include flex-align-center();
-    justify-content: center;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1.2rem;
-    background: $Blue-950;
-    color: $White;
-    width: 2.2rem;
-    height: 1.8rem;
-}
+    h2 {
+      color: $Navy-950;
+      font-weight: 800;
+    }
+  }
 
-.notif h2 {
-    color: $Navy-950;
-    font-weight: 800;
-}
-
-.header button {
+  button {
     @include button-default();
     color: $Gray-600;
     font-size: 0.9rem;
     font-weight: 600;
-}
+  }
 
-.header button:hover {
+  button:hover {
     color: $Blue-950;
+  }
 }
 
 .chats {
-    @include flex-column-center();
-    gap: 0.5rem;
-}
+  @include flex-column-center();
+  gap: 0.5rem;
 
-.chats .chat {
+  .chat {
     display: flex;
-    gap: 1rem;  
+    gap: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
     font-size: 0.9rem;
-}
 
-.chats .chat.active {
-    background: $Navy-50;
-    cursor: pointer;
-}
+    &.active {
+      background: $Navy-50;
+      cursor: pointer;
+    }
+  }
 
-.chats img {
+  img {
     width: 2rem;
     height: 2rem;
-}
+  }
 
-.chats img[alt="Chess"] {
+  img[alt="Chess"] {
     border-radius: 0.4rem;
     margin-left: auto;
     cursor: pointer;
-}
 
-.chats img[alt="Chess"]:hover {
-    box-shadow: 0px 0px 5px 3px $Navy-100;
-}
+    &:hover {
+      box-shadow: 0px 0px 5px 3px $Navy-100;
+    }
+  }
 
-.chat span {
+  span {
     cursor: pointer;
-}
-
-.chat span.fullname {
-    color: $Navy-950;
     font-weight: 800;
-}
 
-.chat span.fullname:hover, .chat span.event:hover {
-    color: $Blue-950;
-}
+    &.fullname {
+      color: $Navy-950;
+    }
 
-.chat span.club {
-    color: $Blue-950;
-    font-weight: 800;
-}
+    &.fullname:hover,
+    &.event:hover,
+    &.club {
+      color: $Blue-950;
+    }
 
-.chat span.event {
-    color: $Gray-600;
-    font-weight: 800;
-}
+    &.event {
+      color: $Gray-600;
+    }
 
-.chat span.dot {
-    border-radius: 50%;
-    background: $Red-500;
-    width: 0.5rem;
-    height: 0.5rem;
-    display: inline-block;
-    margin-inline: 0.4rem;
-    position: relative;
-}
+    &.dot {
+      border-radius: 50%;
+      background: $Red-500;
+      width: 0.5rem;
+      height: 0.5rem;
+      display: inline-block;
+      margin-inline: 0.4rem;
+      position: relative;
 
-.chat span.dot::before {
-    content: '';
-    display: block;
-    position: absolute;
-    background: $Red-500;
-    width: 1rem;
-    height: 1rem;
-    opacity: 0.3;
-    top: -50%;
-    left: -50%;
-    border-radius: 50%;
-    animation: pulse 1s ease-out infinite;
-}
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background: $Red-500;
+        width: 1rem;
+        height: 1rem;
+        opacity: 0.3;
+        top: -50%;
+        left: -50%;
+        border-radius: 50%;
+        animation: pulse 1s ease-out infinite;
+      }
+    }
+  }
 
-.chat .message {
+  .message {
     border: 1px solid $Navy-100;
     border-radius: 0.3rem;
     padding: 1rem;
     margin-top: 1rem;
     cursor: pointer;
-}
 
-.chat .message:hover {
-    background: $Navy-100;
+    &:hover {
+        background: $Navy-100;
+    }
+  } 
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(0);
-    }
+  0% {
+    transform: scale(0);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media screen and (min-width: 768px) {
+  main {
+    width: 70vw;
+    max-width: 50.5rem;
+    padding-inline: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px 20px $Navy-100;
+  }
 
-    main {
-        width: 70vw;
-        max-width: 50.5rem;
-        padding-inline: 1.5rem;
-        border-radius: 1rem;
-        box-shadow: 0px 0px 10px 20px $Navy-100;
-    }
+  .header button,
+  .chats .chat {
+    font-size: 1.2rem;
+  }
 
-    .header button, .chats .chat {
-        font-size: 1.2rem;
-    }
-
-    .chats img {
-        width: 3rem;
-        height: 3rem;
-    }
+  .chats img {
+    width: 3rem;
+    height: 3rem;
+  }
 }
