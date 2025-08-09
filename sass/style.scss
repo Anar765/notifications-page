@@ -76,17 +76,17 @@ body {
     height: 100vh;
     min-height: fit-content;
     color: $Gray-600;
+    background: $Blue-100;
 }
 
 main {
-
     @include flex-column-center();
-
     width: 100%;
-    height: 100%;
+    height: fit-content;
     background: $White;
     padding: 2rem 1rem;
     gap: 1.5rem;
+    max-width: 30rem;
 }
 
 main > *, .chats .chat { width: 100% }
@@ -99,7 +99,8 @@ main > *, .chats .chat { width: 100% }
 .header { justify-content: space-between }
 
 .notif .number {
-    @include button-default();
+    @include flex-align-center();
+    justify-content: center;
     border-radius: 0.5rem;
     font-weight: 600;
     font-size: 1.2rem;
@@ -121,6 +122,10 @@ main > *, .chats .chat { width: 100% }
     font-weight: 600;
 }
 
+.header button:hover {
+    color: $Blue-950;
+}
+
 .chats {
     @include flex-column-center();
     gap: 0.5rem;
@@ -136,6 +141,7 @@ main > *, .chats .chat { width: 100% }
 
 .chats .chat.active {
     background: $Navy-50;
+    cursor: pointer;
 }
 
 .chats img {
@@ -143,9 +149,27 @@ main > *, .chats .chat { width: 100% }
     height: 2rem;
 }
 
+.chats img[alt="Chess"] {
+    border-radius: 0.4rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.chats img[alt="Chess"]:hover {
+    box-shadow: 0px 0px 5px 3px $Navy-100;
+}
+
+.chat span {
+    cursor: pointer;
+}
+
 .chat span.fullname {
     color: $Navy-950;
     font-weight: 800;
+}
+
+.chat span.fullname:hover, .chat span.event:hover {
+    color: $Blue-950;
 }
 
 .chat span.club {
@@ -183,10 +207,15 @@ main > *, .chats .chat { width: 100% }
 }
 
 .chat .message {
-    border: 1px solid $Gray-600;
+    border: 1px solid $Navy-100;
     border-radius: 0.3rem;
     padding: 1rem;
     margin-top: 1rem;
+    cursor: pointer;
+}
+
+.chat .message:hover {
+    background: $Navy-100;
 }
 
 @keyframes pulse {
@@ -196,5 +225,25 @@ main > *, .chats .chat { width: 100% }
 
     100% {
         transform: scale(1);
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    main {
+        width: 70vw;
+        max-width: 50.5rem;
+        padding-inline: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 10px 20px $Navy-100;
+    }
+
+    .header button, .chats .chat {
+        font-size: 1.2rem;
+    }
+
+    .chats img {
+        width: 3rem;
+        height: 3rem;
     }
 }

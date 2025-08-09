@@ -17,17 +17,15 @@
     <div class="header">
       <div class="notif">
         <h2>Notifications</h2>
-        <button class="number">
-          3
-        </button>
+        <div class="number">3</div>
       </div>
 
-      <button onclick="Mark()">Mark all as read</button>
+      <button onclick="MarkAll()">Mark all as read</button>
     </div>
 
     <div class="chats">
 
-      <div class="chat active">
+      <div class="chat active" onclick="MarkByOne(0)">
         <img src="./assets/images/avatar-mark-webber.webp" alt="Mark Webber">
         <div class="text">
           <p>
@@ -39,7 +37,7 @@
         </div>
       </div>
 
-      <div class="chat active">
+      <div class="chat active" onclick="MarkByOne(1)">
         <img src="./assets/images/avatar-angela-gray.webp" alt="Angela Gray">
         <div class="text">
           <p><span class="fullname">Angela Gray</span> followed you<span class="dot"></span></p>
@@ -47,7 +45,7 @@
         </div>
       </div>
 
-      <div class="chat active">
+      <div class="chat active" onclick="MarkByOne(2)">
         <img src="./assets/images/avatar-jacob-thompson.webp" alt="Jacob Thompson">
         <div class="text">
           <p><span class="fullname">Jacob Thompson</span> has joined your group <span class="club">Chess Club</span>
